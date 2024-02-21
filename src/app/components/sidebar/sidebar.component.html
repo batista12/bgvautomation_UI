@@ -1,0 +1,21 @@
+<div class="logo">
+        <div class="logo-img">
+            <img width="180" alt="Capgemini logo" src="https://img-c.udemycdn.com/organization/W_70/199510_b2d7.png" />
+        </div>
+</div>
+<div class="sidebar-wrapper">
+    <ul class="nav nav-list">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a class="nav-link" [routerLink]="menuItem.path">
+                <i [class]="menuItem.icon"></i>
+                <span>{{menuItem.title}}</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link navlogout">
+                <i class="fa fa-dashboard"></i>
+                <span (click)="logOut()">LogOut</span>
+            </a>
+        </li>
+    </ul>
+</div>

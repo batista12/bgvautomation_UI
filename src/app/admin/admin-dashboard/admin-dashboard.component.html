@@ -1,0 +1,310 @@
+<!-- Admin Console responsive header -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header">
+        <div class="container-fluid">
+            <h2 class="navbar-brand">Admin Console</h2>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#myModal">Create User</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+           
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered custom-table">
+                  <thead class="text-center">
+                    <th>EMPLOYEE ID</th>
+                    <th>EMPLOYEE NAME</th>
+                    <th>EMPLOYEE - EMAIL ID</th>
+                    <th>EMPLOYEE ROLE</th>
+                    
+                   
+                  </thead>
+                  <tbody class="text-center">
+                    <tr >
+                      <td>
+                        <!-- {{ emp.empId }} -->
+                        1111111
+                      </td>
+                      <td>
+                       <!--  {{ emp.empName }} -->
+                       Reetaa Singh
+                      </td>
+                      <td>
+                        <!-- {{ emp.emailId }} -->
+                        reeta@capgemini.com
+                      </td>
+                      <td>
+                       <!--  {{emp.role}} -->
+                       Admin
+                      </td>
+                      <td>
+                        <i
+                          class="fa fa-trash"
+                          title="Delete Employee"
+                        ></i>
+                      </td>
+                      <td>
+                        <i
+                          class="fa fa-pencil"
+                          title="Update Employee"
+                          data-bs-toggle="modal"
+                          data-bs-target="#staticBackdrop"
+                        ></i>
+  
+                        <!-- Modal -->
+                        <div
+                          class="modal fade"
+                          id="staticBackdrop"
+                          data-bs-backdrop="static"
+                          data-bs-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                          
+                        >
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div>
+                                <div class="row main">
+                                  <div>
+                                         
+                                    <div class="card-header card-header-success">
+                                    <h4 class="card-title">Update form</h4>
+                                    <p class="card-category">
+                                      Complete the below form
+                                    </p>
+                                  </div>
+                                        <form
+                                        #updateForm="ngForm"
+                                      >
+                                      
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <div class="half-width">
+                                              <label for="name" class="form-label"
+                                                >Emp Id</label
+                                              >
+                                              <input
+                                                class="form-control"
+                                                placeholder="Emp Id"
+                                                name="empId"
+                                              
+                                               
+                                                required
+                                                pattern="0*[1-9][0-9]*"
+                                              />
+                                            </div>
+                                            <div
+                                              
+                                              class="alert alert-danger"
+                                            >
+                                              Employee Id require
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="half-width">
+                                              <label for="name" class="form-label"
+                                                >Emp Name</label
+                                              >
+                                              <input
+                                                class="form-control"
+                                                placeholder="Emp Name"
+                                                name="empName"
+                                                
+                                                required
+                                                pattern="[a-zA-Z ]*"
+                                              /> 
+                                            </div>
+                                            <div class="alert alert-danger">
+                                              Employee Name require
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <div class="half-width">
+                                              <label for="name" class="form-label"
+                                                >Employee Role</label
+                                              >
+                                              <select class="form-control"
+                                              placeholder="Employe Role "
+                                              name="empRole"
+                                              required>
+                                                <option value="Admin"> Admin</option>
+                                                <option value="User"> User</option>
+                                               </select>
+
+                                            </div>
+                                            <div class="alert alert-danger">
+                                                Employee Role require
+                                              </div>
+                                          </div>
+                                          
+                                         
+                                            <div class="col-md-6">
+                                              <div class="half-width">
+                                                <label for="name" class="form-label"
+                                                  >Employee Email</label>
+                                                  <input
+                                                  class="form-control"
+                                                  placeholder="Employee Email ID"
+                                                  name="empEmail"
+                                                  
+                                                  required
+                                                  pattern="[a-zA-Z ]*"
+                                                /> 
+                                                
+                                              </div>
+                                              <div class="alert alert-danger">
+                                                Employee Email ID require
+                                              </div>
+                                            </div>
+                                            
+                                          </div>
+                                        
+                                        
+                                        <div class="d-flex flex-row-reverse pt-5">
+                                          <button
+                                            type="button"
+                                            class="btn btn-danger"
+                                            data-bs-dismiss="modal"
+                                          >
+                                            Close
+                                          </button>
+                                          <button
+                                            data-bs-dismiss="modal"
+                                            type="submit"
+                                            [disabled]="updateForm.invalid"
+                                            class="btn btn-primary me-3"
+                                          >
+                                            Update
+                                          </button>
+                                        </div>
+                                      </form>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Table content for admin console -->
+<!-- <div class="container mt-5">
+    <div class="table-responsive">
+        <table class="table table-bordered custom-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Manasi</td>
+                    <td>Singh</td>
+                    <td>manasisingh2602@gmail.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Sweta</td>
+                    <td>Kumari</td>
+                    <td>swetakumari@gmail.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Mrinal</td>
+                    <td>Singh</td>
+                    <td>manasi.singh@ge.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->
+
+
+<!-- Create User Popup model -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true"
+    data-bs-keyboard="false" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="content main1">
+            <div>
+                <div class=" user-header user-header-success">
+                    <h5 class="modal-title text-white titlestyle" id="myModalLabel">Create User</h5>
+                </div>
+            </div>
+            <div class="modal-body mt-5">
+                <form>
+                    <div class="mb-1">
+                        <h6 for="id" class="form-label">User ID <span class="text-danger"><b>*</b></span></h6>
+                        <input type="text" class="form-control" id="id" placeholder="Enter User ID">
+                    </div>
+                    <div class="mb-1">
+                        <h6 for="email" class="form-label">Email Address <span class="text-danger"><b>*</b></span></h6>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-1">
+                        <h6 for="name" class="form-label">Name <span class="text-danger"><b>*</b></span></h6>
+                        <input type="text" class="form-control" id="id" placeholder="Enter name">
+                    </div>
+                    <div class="mb-1">
+                        <h6 for="dropdown" class="form-label">Role <span class="text-danger"><b>*</b></span></h6>
+                        <select class="form-select" id="dropdown">
+                            <option selected disabled>Select a role</option>
+                            <option value="admin">Admin</option>
+                            <option value="employee">Employee</option>
+                        </select>
+                    </div>
+                    <div class="mb-1">
+                      <h6  class="form-label">Password<span class="text-danger"><b>*</b></span></h6>
+                      <input type="password" class="form-control" id="id" placeholder="Enter password">
+                  </div>
+                  <div class="mb-1">
+                    <h6 class="form-label">Confirm Password<span class="text-danger"><b>*</b></span></h6>
+                    <input type="password" class="form-control" id="id" placeholder="Enter confirm password">
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

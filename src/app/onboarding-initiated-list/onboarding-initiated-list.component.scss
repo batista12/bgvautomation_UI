@@ -1,0 +1,144 @@
+.title{
+    padding: 10px 0;
+    font-weight: bold;
+    color: #0cb4c9;
+}
+.custom-table {
+    background-color: #f8f9fa;
+    font-size: 0.7rem;
+}
+
+.custom-table thead th {
+    position: sticky;
+    font-size: 0.7rem;
+    top: 0;
+    background-color: #f8f9fa;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 10px;
+}
+
+.timeline-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .timeline{
+        position: relative;
+        padding: 20px 0 0 0;
+        margin-bottom: 20px;
+        list-style: none;
+        float: left;
+        width: 100%;
+        .timeline-before{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 20px;
+            left: 0;
+            right: 50%;
+            border-right: 2px #dee5e7 solid;
+
+        }
+        li{
+            position: relative;
+            margin-bottom: 20px;
+            float: left;
+            width: 100%;
+            clear: both;
+            backface-visibility:hidden;
+            -webkit-backface-visibility: hidden;
+            -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+            &::after, &::before{
+                content: " ";
+                display: table;
+            }
+            .timeline-badge{
+                z-index: 100;
+                position: absolute;
+                float: left;
+                top: 16px;
+                left: 50%;
+                width: 50px;
+                height: 50px;
+                margin-left: -25px;
+                border-radius: 50% 50% 50% 50%;
+                text-align: center;
+                font-size: 1.4em;
+                line-height: 50px;
+                color: #fff;
+                .avatar-container{
+                    border: 1px solid #dee5e7;
+                    background-color: #e5e5e5;
+                    background-size: cover;
+                    border-radius: 50%;
+                    height: 3.2rem;
+                    width: 3.2rem;
+                    cursor: pointer;
+                    color: #ffffff;
+                    display: inline-block;
+                    font-weight: bold;
+                    position: relative;
+                    text-align: center;
+                    vertical-align: middle;
+                    color: #4a4a4a;
+                    .avatar.soloAvatar{
+                        background: rgba(0, 0, 0, 0.15) center;
+                        border-radius: 50%;
+                        .sub-avatar{
+                            font-size: 1.8rem;
+                            line-height: 4.8rem;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 0;
+                            background-color: #e5e5e5;
+                            span{
+                                line-height: 4.8rem !important;
+                                vertical-align: top;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+            .timeline-panel{
+                float: right;
+                padding: 10px;
+                position: relative;
+                width: calc(50% - 3rem);
+                border: 1px solid #dee5e7;
+                border-radius: 4px;
+                -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+                &::before{
+                    content: " ";
+                    display: inline-block;
+                    position: absolute;
+                    top: 26px;
+                    border-top: 15px solid transparent;
+                    border-right: 0 solid #dee5e7;
+                    border-bottom: 15px solid transparent;
+                    border-left: 15px solid #dee5e7;
+                    right: auto;
+                    left: -15px;
+                    border-right-width: 15px;
+                    border-left-width: 0;
+                }
+                .timeline-heading{
+                    .timeline-title{
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        color: inherit;
+                        font-size:18px;
+                    }
+                }
+            }
+        }
+    }
+}

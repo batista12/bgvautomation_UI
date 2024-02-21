@@ -1,0 +1,23 @@
+.card-header-success{
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0,188,212,.4);
+    background: linear-gradient(60deg,#26c6da,#00acc1);
+    border-radius: 3px;
+    margin: -20px 15px 0;
+    color: #fff;
+}
+.example-full-width{
+    width: 400px;
+}
+.card-body{
+    font-size: 13px;
+}
+
+.modal-footer.multipleresfooter{
+    justify-content: center;
+    padding: 0.3em;
+    background-color: whitesmoke;
+}
+
+.modal-header.multipleresheader {
+    background: linear-gradient(60deg, #26c6da, #00acc1);
+}

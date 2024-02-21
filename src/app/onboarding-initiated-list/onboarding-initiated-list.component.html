@@ -1,0 +1,34 @@
+<div class="title">Onboarding Initiated List</div>
+<div class="card">
+    <div class="card-body">
+      
+            <div class="table-responsive">
+                <table class="table table-bordered custom-table">
+                    <thead class="text-center">
+                        <th>
+                            Employee Name
+                        </th>
+                        <th>
+                            Employee Id
+                        </th>
+                        <th>
+                            Onboarding Initiation Date
+                        </th>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr *ngFor="let emp of employee">
+                            <td>
+                                {{emp.empname}}
+                            </td>
+                            <td>
+                                {{emp.empid}}
+                            </td>
+                            <td>
+                                {{emp.date}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>        
+    </div>
+</div>

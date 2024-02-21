@@ -1,0 +1,39 @@
+<div class="title">Onboarding Completed List</div>
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered custom-table">
+                <thead class="text-center">
+                    <th>
+                        EMPLOYEE ID
+                    </th>
+                    <th>
+                        EMPLOYEE NAME
+                    </th>
+                    <th>
+                       IMAGE NAME
+                    </th>
+                    <th>
+                        EMPLOYEE STATUS
+                    </th>
+                  
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let emp of employee">
+                        {{emp.empid}}
+                        <td>
+                            {{emp.empname}}
+                        </td>
+                        <td>
+                            {{emp.imagename}}
+                        </td>
+                        <td>
+                            <i class="fa fa-eye cursor-pointer" title="Click Here" (click)="OpenTimeSeriesDialog()"></i>
+                            <span class="timelinestyle">  </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="title">Onboarding Pending List</div>
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered custom-table">
+                <thead class="text-center">
+                    <th>
+                        EMPLOYEE ID
+                    </th>
+                    <th>
+                        EMPLOYEE NAME
+                    </th>
+                    <th>
+                        PROJECT ID
+                    </th>
+                    <th>
+                        PROJECT NAME
+                    </th>
+                    <th>
+                        EMPLOYEE - EMAIL ID
+                    </th>
+                    <th>
+                        GE BUSINESS ACCOUNT
+                    </th>
+                    <th>
+                        ABL Service line
+                    </th>
+                    <th>
+                        EMPLOYEE TYPE
+                    </th>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let emp of employee">
+                        <td>
+                            {{emp.empId}}
+                        </td>
+                        <td>
+                            {{emp.empName}}
+                        </td>
+                        <td>
+                            {{emp.projectId}}
+                        </td>
+                        <td>
+                            {{emp.accountName}}
+                        </td>
+                        <td>
+                            {{emp.emailId}}
+                        </td>
+                        <td>
+                            {{emp.projectName}}
+                        </td>
+                        <td>
+                            {{emp.abl}}
+                        </td>
+                        <td>
+                           {{emp.empType}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

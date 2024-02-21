@@ -1,0 +1,39 @@
+.empInfo{
+    font-size: 14px;
+    .label{
+        display: inline-block;
+        width: 220px;
+        font-weight: 500;
+        line-height: 31px;
+        background-color:#33475b;
+    }
+}
+button{
+    font-size: 13px;
+}
+.form-input{
+    width: 270px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color:#33475b;
+}
+.font-14{
+    font-size: 14px;
+}
+.example-full-width{
+    width: 400px;
+}
+mat-form-field {
+    width: 100%;
+  }
+
+  .main{
+    padding-left: 2em !important;
+    padding-right: 1.8em !important;
+    padding-top: 5em !important;
+    padding-bottom: 2em !important;
+    border: 0.4em solid #00acc1 !important;
+    background: #e7e7e7 !important;
+    border-radius: 7% !important;
+}
+ 

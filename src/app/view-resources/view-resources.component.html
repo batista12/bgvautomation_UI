@@ -1,0 +1,380 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-success">
+            <h4 class="card-title">Resources List</h4>
+            <p class="card-category">For actions click on the buttons</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered custom-table">
+                <thead class="text-center">
+                  <th>EMPLOYEE ID</th>
+                  <th>EMPLOYEE NAME</th>
+                  <th>PROJECT ID</th>
+                  <th>PROJECT NAME</th>
+                  <th>EMPLOYEE - EMAIL ID</th>
+                  <th>GE BUSINESS ACCOUNT</th>
+                  <!-- <th>
+                                        ABL Service line
+                                    </th> -->
+                  <th>EMPLOYEE TYPE</th>
+                  <!-- <th>
+                                        ACTION
+                                    </th> -->
+                </thead>
+                <tbody class="text-center">
+                  <tr *ngFor="let emp of employees; let i = index">
+                    <td>
+                      {{ emp.empId }}
+                    </td>
+                    <td>
+                      {{ emp.empName }}
+                    </td>
+                    <td>
+                      {{ emp.projectId }}
+                    </td>
+                    <td>
+                      {{ emp.accountName }}
+                    </td>
+                    <td>
+                      {{ emp.emailId }}
+                    </td>
+                    <td>
+                      {{ emp.projectName }}
+                    </td>
+                    <!-- <td>
+                                            {{emp.abl}}
+                                        </td> -->
+                    <td>
+                      {{ emp.empType }}
+                    </td>
+                    <td>
+                      <i
+                        class="fa fa-trash"
+                        title="Delete Employee"
+                        (click)="delete(emp.empId, i)"
+                      ></i>
+                    </td>
+                    <td>
+                      <!-- <i class="fa fa-pencil" title="Update Employee" (click)="OpenDialog(emp.empId,emp)"></i> -->
+                      <i
+                        class="fa fa-pencil"
+                        title="Update Employee"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop"
+                        (click)="getEmployeeById(emp.empId)"
+                      ></i>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="staticBackdrop"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                        *ngIf="user"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="container">
+                              <div class="row main">
+                                  <div>
+                                    <div
+                                      class="card-header card-header-success"
+                                    >
+                                      <h4 class="card-title">Resources form</h4>
+                                      <p class="card-category">
+                                        Complete the below form
+                                      </p>
+                                    </div>
+                                    <form
+                                      
+                                      #updateForm="ngForm"
+                                      (ngSubmit)="
+                                        onUpdateForm(
+                                          updateForm.value,
+                                          updateForm.value.empId
+                                        )
+                                      "
+                                    >
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="half-width">
+                                            <label for="name" class="form-label"
+                                              >Emp Id</label
+                                            >
+                                            <input
+                                              class="form-control"
+                                              placeholder="Emp Id"
+                                              name="empId"
+                                              #empId="ngModel"
+                                              ngModel="{{ user.empId }}"
+                                              required
+                                              pattern="0*[1-9][0-9]*"
+                                            />
+                                          </div>
+                                          <div
+                                            *ngIf="
+                                              empId.invalid &&
+                                              (empId.dirty || empId.touched)
+                                            "
+                                            class="alert alert-danger"
+                                          >
+                                            Employee Id require
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="half-width">
+                                            <label for="name" class="form-label"
+                                              >Emp Name</label
+                                            >
+                                            <input
+                                              class="form-control"
+                                              placeholder="Emp Name"
+                                              name="empName"
+                                              #empName="ngModel"
+                                              ngModel="{{ user?.empName }}"
+                                              required
+                                              pattern="[a-zA-Z ]*"
+                                            />
+                                          </div>
+                                          <div
+                                            *ngIf="
+                                              empName.invalid &&
+                                              (empName.dirty || empName.touched)
+                                            "
+                                            class="alert alert-danger"
+                                          >
+                                            Employee Name require
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="half-width">
+                                            <label for="name" class="form-label"
+                                              >Project Id</label
+                                            >
+                                            <select
+                                              class="form-control"
+                                              placeholder="Project Id"
+                                              name="projectId"
+                                              #projectId="ngModel"
+                                              ngModel="{{ user?.projectId }}"
+                                              [ngModelOptions]="{
+                                                updateOn: 'change'
+                                              }"
+                                              required
+                                            >
+                                              <option
+                                                *ngFor="let option of options"
+                                              >
+                                                {{ option.projectId }}
+                                              </option>
+                                            </select>
+                                          </div>
+                                          <div
+                                            *ngIf="
+                                              projectId.invalid &&
+                                              (projectId.dirty ||
+                                                projectId.touched)
+                                            "
+                                            class="alert alert-danger"
+                                          >
+                                            Project Id require
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div
+                                            class="half-width"
+                                            [ngSwitch]="
+                                              updateForm.value.projectId
+                                            "
+                                          >
+                                            <label for="name" class="form-label"
+                                              >Project Name</label
+                                            >
+                                            <input
+                                              *ngSwitchCase="100878716"
+                                              class="form-control"
+                                              placeholder="Project Name"
+                                              name="projectName"
+                                              #projectName3="ngModel"
+                                              ngModel="GE Corp - Application Services"
+                                              readonly
+                                            />
+                                            <input
+                                              *ngSwitchCase="100945548"
+                                              class="form-control"
+                                              placeholder="Project Name"
+                                              name="projectName"
+                                              #projectName2="ngModel"
+                                              ngModel="GE Corp - SC NextGen CW"
+                                              readonly
+                                            />
+                                            <input
+                                              *ngSwitchCase="100930301"
+                                              class="form-control"
+                                              placeholder="Project Name"
+                                              name="projectName"
+                                              #projectName="ngModel"
+                                              ngModel="GE BOX Separation"
+                                              readonly
+                                            />
+                                          </div>
+                                          <!-- <div *ngIf="projectName.invalid && (projectName.dirty || projectName.touched)"
+                                            class="alert alert-danger">Project Name require</div> -->
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="half-width">
+                                            <label for="name" class="form-label"
+                                              >Employee Email</label
+                                            >
+                                            <input
+                                              type="email"
+                                              class="form-control"
+                                              placeholder="EM - Email id"
+                                              name="emailId"
+                                              #emailId="ngModel"
+                                              ngModel="{{ user?.emailId }}"
+                                              required
+                                              pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail)\.com$"
+                                            />
+                                          </div>
+                                          <div
+                                            *ngIf="
+                                              emailId.invalid &&
+                                              (emailId.dirty || emailId.touched)
+                                            "
+                                            class="alert alert-danger"
+                                          >
+                                            Email Id require
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="half-width">
+                                            <label for="name" class="form-label"
+                                              >GE Business/ Account Name</label
+                                            >
+                                            <input
+                                              class="form-control"
+                                              placeholder="GE Business/ Account Name"
+                                              name="accountName"
+                                              #accountName="ngModel"
+                                              ngModel="{{ user?.accountName }}"
+                                              required
+                                            />
+                                          </div>
+                                          <div
+                                            *ngIf="
+                                              accountName.invalid &&
+                                              (accountName.dirty ||
+                                                accountName.touched)
+                                            "
+                                            class="alert alert-danger"
+                                          >
+                                            Account Name require
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="half-width">
+                                            <label for="name" class="form-label"
+                                              >ABL Service line</label
+                                            >
+                                            <input
+                                              class="form-control"
+                                              placeholder="ABL Service line"
+                                              name="abl"
+                                              #abl="ngModel"
+                                              ngModel="{{ user?.abl }}"
+                                              required
+                                              readonly
+                                            />
+                                          </div>
+                                          <div
+                                            *ngIf="
+                                              abl.invalid &&
+                                              (abl.dirty || abl.touched)
+                                            "
+                                            class="alert alert-danger"
+                                          >
+                                            Abl require
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="half-width">
+                                            <label for="name" class="form-label"
+                                              >Emp Type
+                                              (Subcone/Employee)</label
+                                            >
+                                            <select
+                                            class="form-control"
+                                              name="empType"
+                                              placeholder="Emp Type (Subcone/Employee)"
+                                              #empType="ngModel"
+                                              ngModel="{{ user?.empType }}"
+                                              required
+                                            >
+                                              <option value="Employee">
+                                                Employee
+                                              </option>
+                                              <option value="Subcone">
+                                                Subcone
+                                              </option>
+                                            </select>
+                                          </div>
+                                          <div
+                                            *ngIf="
+                                              empType.invalid &&
+                                              (empType.dirty || empType.touched)
+                                            "
+                                            class="alert alert-danger"
+                                          >
+                                            Employee Type require
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="d-flex flex-row-reverse pt-3">
+                                        <button
+                                          type="button"
+                                          class="btn btn-danger"
+                                          data-bs-dismiss="modal"
+                                        >
+                                          Close
+                                        </button>
+                                        <button
+                                          data-bs-dismiss="modal"
+                                          type="submit"
+                                          [disabled]="updateForm.invalid"
+                                          class="btn btn-primary me-3"
+                                        >
+                                          Update
+                                        </button>
+                                      </div>
+                                    </form>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+*{
+    background-color: #ffff;  
+    overflow:  hidden !important;
+}
+
+.main{
+    overflow:  hidden !important;
+}
+
+.title{
+    font-size: 4.3rem !important;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    color: #00008B;
+}
+
+.name , .email{
+    position: relative;
+    color: rgb(162, 173, 173);
+    
+}
+
+.name i , .email i{
+    position: absolute !important;
+    left: 0.9em;
+    top: 1.2em;
+    background-color: rgb(190, 233, 247) !important;
+    color: rgb(162, 173, 173);
+}
+
+.fa{
+    font-size: 1.2rem !important;
+}
+
+
+.query{
+    color: rgb(162, 173, 173);
+}
+
+button{
+    height: 3rem;
+    background-color: #00bcd4 !important;
+    border: hidden;
+    border-radius: 1.5rem;
+    display: block;
+    color: #ffff !important;
+
+}
+
+// .name ,.email{
+//     width: 21rem;
+//     color: rgb(162, 173, 173);
+//     background-color: lightblue;
+//     height: 3rem;
+//     border: hidden;
+//     padding: 0.5em;
+//     border-radius: 50rem;
+//     margin-bottom: 1rem;
+    
+// }
+
+textarea{
+    width: 100%;
+    margin: 9px 0;
+    background-color: rgb(190, 233, 247) !important;
+    height: 7rem;
+    border: hidden;
+    padding: 0.5em;
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600 !important;
+}
+
+input[type=text], input[type=email] { 
+    width: 100%; 
+    padding: 12px 40px; 
+    background-color: rgb(190, 233, 247) !important;
+    margin: 9px 0; 
+    display: block; 
+    border: 1px solid #ccc; 
+    border-radius: 50rem;
+    box-sizing: border-box; 
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600 !important;
+} 
+
+
+.card-body{
+    margin-left: 9% !important;
+    height: 95.5vh;
+}
+

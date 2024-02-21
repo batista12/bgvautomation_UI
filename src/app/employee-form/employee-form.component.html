@@ -1,0 +1,223 @@
+<div class="main-content">
+
+    <div class="container-fluid">
+
+
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="card">
+
+                    <div class="card-header card-header-success">
+
+                        <button mat-raised-button color="warn" class="align-items-end" data-bs-toggle="modal"
+                            style="float: right;" data-bs-target="#multipleResDialog">Add Multiple Resources</button>
+
+                        <h4 class="card-title">Resources form</h4>
+
+                        <p class="card-category">Complete the below form</p>
+
+                    </div>
+
+                    <div class="modal fade" id="multipleResDialog" tabindex="-1" aria-labelledby="exampleModalLabel1"
+                        aria-hidden="true">
+
+                        <div class="modal-dialog">
+
+                            <div class="modal-content multipleRes">
+
+                                <div class="modal-header multipleresheader">
+
+                                    <h5 class="modal-title text-white" id="exampleModalLabel1">Use below template for uploading
+                                        multiple employee details at once.</h5>
+
+                                </div>
+
+                                <div class="modal-body">
+                                    <button type="button" class="btn btn-link" (click)="exportToExcel($event)">Download
+                                        sample template file</button>
+
+                                    <input class="ps-3" type="file" (change)="readExcel($event)">
+                                </div>
+
+                                <div class="modal-footer multipleresfooter">
+                                        <button type="button" class="btn btn-success" (click)="uploadExcel()"
+                                        data-bs-dismiss="modal">Upload</button>
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <mat-form-field class="example-full-width">
+
+                                        <input matInput placeholder="Emp Id" formControlName="empId">
+
+                                        <mat-error *ngIf="empId?.errors?.['required']">Emp Id is Required!</mat-error>
+
+                                        <mat-error *ngIf="empId?.errors?.['pattern']">Invalid! Please enter digits only.
+                                        </mat-error>
+
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <mat-form-field class="example-full-width">
+
+                                        <input matInput placeholder="Emp Name" formControlName="empName">
+
+                                        <mat-error *ngIf="empName?.errors?.['required']">Emp Name is Required!
+                                        </mat-error>
+
+                                        <mat-error *ngIf="empName?.errors?.['pattern']">Invalid! Please enter alphabets
+                                            only.</mat-error>
+
+                                    </mat-form-field>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <mat-form-field class="example-full-width">
+
+                                        <mat-select formControlName="projectId" placeholder="Project Id">
+
+                                            <mat-option *ngFor="let option of options" [value]="option.projectId">{{
+                                                option.projectId }}</mat-option>
+
+                                        </mat-select>
+
+                                        <mat-error *ngIf="projectId?.errors?.['required']">Project ID is Required!
+                                        </mat-error>
+
+                                        <mat-error *ngIf="projectId?.errors?.['pattern']">Invalid! Please enter digits
+                                            only.</mat-error>
+
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <mat-form-field class="example-full-width">
+
+                                        <input matInput formControlName="projectName" placeholder="Project Name"
+                                            [readonly]="true">
+
+                                        <mat-error *ngIf="projectName?.errors?.['required']">Project Name is Required!
+                                        </mat-error>
+
+                                        <mat-error *ngIf="projectName?.errors?.['pattern']">Invalid! Please enter
+                                            correctly.</mat-error>
+
+                                    </mat-form-field>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <mat-form-field class="example-full-width">
+
+                                        <input matInput placeholder="Engagement Manager - Email id"
+                                            formControlName="emailId">
+
+                                        <mat-error *ngIf="emailId?.errors?.['required']">Email is Required!</mat-error>
+
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <mat-form-field class="example-full-width">
+
+                                        <input matInput placeholder="GE Business/ Account Name"
+                                            formControlName="accountName" [readonly]="true">
+
+                                        <mat-error *ngIf="accountName?.errors?.['required']">AccountName is Required!
+                                        </mat-error>
+
+                                    </mat-form-field>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <mat-form-field class="example-full-width">
+
+                                        <input matInput placeholder="ABL Service line" formControlName="abl"
+                                            [readonly]="true">
+
+                                        <mat-error *ngIf="abl?.errors?.['required']">This field is required!</mat-error>
+
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <mat-form-field class="example-full-width">
+
+                                        <mat-select formControlName="empType" placeholder="Emp Type">
+
+                                            <!-- <mat-option value="" disabled selected>Select Emp Type</mat-option> -->
+
+                                            <mat-option value="Subcone">Subcone</mat-option>
+
+                                            <mat-option value="Employee">Employee</mat-option>
+
+                                        </mat-select>
+
+                                        <mat-error *ngIf="empType?.errors?.['required']">Emp Type is Required!
+                                        </mat-error>
+
+                                    </mat-form-field>
+
+                                </div>
+
+                            </div>
+
+                            <button mat-raised-button color="warn" class="btn btn-danger pull-right" [disabled]="empForm.invalid">Submit</button>
+
+                            <div class="clearfix"></div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

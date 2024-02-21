@@ -1,0 +1,157 @@
+
+.main-wrapper{
+    padding: 120px 0;
+
+    .right-panel{
+        padding: 0 40px;
+        margin: 0 auto;
+        .signup{
+            font-size: 14px;
+            .signup-link{
+                text-decoration: underline;
+                color: #2a6fa8;
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
+        form{
+            background: white;
+            border-radius: 20px;
+            padding: 15px;
+            // margin-top: 100px;
+            // margin-left: 700px;
+        }
+    }
+
+    
+  }
+  .ge-lockup,
+.ge-lockup.-size--medium {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1.125rem;
+    line-height: 1.643rem;
+}
+
+.ge-lockup__monogram {
+    background-image: url("https://img-c.udemycdn.com/organization/W_70/199510_b2d7.png");
+    display:block;
+  }
+ .ge-lockup > .ge-lockup__monogram,
+.ge-lockup > img {
+   height: 2.7rem;
+   min-width: 12rem;
+   margin: 0.625rem;
+   background-size: contain;
+}
+  .ge-footer,
+.ge footer {
+    bottom: 0;
+   
+    position: fixed;
+    width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ECECF0;
+  color: #2f3133;
+//   font-size: 0.624rem;
+  line-height: 0.911rem;
+}
+
+.ge-footer,
+.ge footer {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.ge-footer__brand {
+    -webkit-box-flex:0;
+        -ms-flex:0 0 4rem;
+            flex:0 0 4rem;
+
+    align-items: center;
+    flex: 2.5;
+    text-align: right;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+.ge-footer_copyright{
+    padding-left: 1rem;
+}
+.ge-footer__legal {
+    -webkit-box-flex:0.7;
+        -ms-flex:0.7;
+            flex:0.7;
+    text-align: right;
+    padding: 1rem;
+    padding-right: 1rem;
+  }
+.ge-footer__legal > a {
+
+  font-size: 1.3rem;
+    font-weight: 700;
+    line-height: .9375rem;
+    color: #00b5e2;
+      text-decoration: none;
+
+}
+.ge-footer__legal > a:hover {
+    color: #004080;
+    
+}
+
+.logincontainer{
+    width: 100%;
+    height: 100%;
+    background: 
+    linear-gradient(
+      rgba(5, 96, 186, .68),
+     rgba(5, 96, 186, .68)
+    ),
+    url("../../assets/loginbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    position: relative;
+    overflow-y: hidden !important;
+}
+
+.signtitle{
+    padding-left: 75px !important;
+}
+
+.ltitle{
+    padding-left: 370px !important;
+    margin-top: -70px;
+    margin-bottom: 26px;
+    color: white;
+}

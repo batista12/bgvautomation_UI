@@ -1,0 +1,103 @@
+<div class="main-content">
+ 
+  <div class="container-fluid">
+
+    <!-- <div class="row">
+     <div class="col-lg-3 col-md-6 col-sm-6"  *ngFor="let item of data, let i = index" >
+        <div class="card card-stats" (click)="openDescription(i)">
+                <div class="card-header card-header-icon {{item.icon}}">
+                   <div class="card-icon">
+                        <i class="fa {{item.fontIcon}}" aria-hidden="true"></i>
+                    </div>
+                        <p class="card-category">{{item.title}}</p>
+                        <h3 class="card-title text-end">{{employeeCount}}</h3>  
+                </div>
+                  <div class="card-footer">
+                    <div class="stats">
+                      <a>{{item.footerTitle}}</a>
+                    </div>
+                  </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6"  *ngFor="let item of data, let i = index" >
+         <div class="card card-stats" (click)="openDescription(i)">
+                 <div class="card-header card-header-icon {{item.icon}}">
+                    <div class="card-icon">
+                         <i class="fa {{item.fontIcon}}" aria-hidden="true"></i>
+                     </div>
+                         <p class="card-category">Resources</p>
+                         <h3 class="card-title text-end">{{employeeCount}}</h3>  
+                     </div>
+                   <div class="card-footer">
+                     <div class="stats">
+                       <a>{{item.footerTitle}}</a>
+                     </div>
+                   </div>
+         </div>
+       </div>
+       <div class="col-lg-3 col-md-6 col-sm-6"  *ngFor="let item of data1, let i = index" >
+        <div class="card card-stats" (click)="openDescription1(i)">
+                <div class="card-header card-header-icon {{item.icon}}">
+                   <div class="card-icon">
+                        <i class="fa {{item.fontIcon}}" aria-hidden="true"></i>
+                    </div>
+                        <p class="card-category">Onboarding Initiated</p>
+                        <h3 class="card-title text-end">{{Count}}</h3>  
+                    </div>
+                  <div class="card-footer">
+                    <div class="stats">
+                      <a>{{item.footerTitle}}</a>
+                    </div>
+                  </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6"  *ngFor="let item of data2, let i = index" >
+        <div class="card card-stats" (click)="openDescription2(i)">
+                <div class="card-header card-header-icon {{item.icon}}">
+                   <div class="card-icon">
+                        <i class="fa {{item.fontIcon}}" aria-hidden="true"></i>
+                    </div>
+                        <p class="card-category">Onboarding Pending</p>
+                        <h3 class="card-title text-end">{{Count1}}</h3>  
+                    </div>
+                  <div class="card-footer">
+                    <div class="stats">
+                      <a>{{item.footerTitle}}</a>
+                    </div>
+                  </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6"  *ngFor="let item of data3, let i = index" >
+        <div class="card card-stats" (click)="openDescription3(i)">
+                <div class="card-header card-header-icon {{item.icon}}">
+                   <div class="card-icon">
+                        <i class="fa {{item.fontIcon}}" aria-hidden="true"></i>
+                    </div>
+                        <p class="card-category">Onboarding Completed</p>
+                        <h3 class="card-title text-end">{{Count3}}</h3>  
+                    </div>
+                  <div class="card-footer">
+                    <div class="stats">
+                      <a>{{item.footerTitle}}</a>
+                    </div>
+                  </div>
+        </div>
+      </div>
+    
+
+    <div class="resources" *ngIf="cardCheck?.title === 'Resources'">
+      <app-resources-list></app-resources-list>
+    </div>
+    <div class="resources" *ngIf="cardCheck?.title === 'Onboarding Initiated'">
+      <app-onboarding-initiated-list></app-onboarding-initiated-list>
+    </div>
+    <div class="resources" *ngIf="cardCheck?.title === 'Onboarding Pending'">
+      <app-onboarding-pending-list></app-onboarding-pending-list>
+    </div>
+    <div class="resources" *ngIf="cardCheck?.title === 'Onboarding Completed'">
+      <app-onboarding-completed-list></app-onboarding-completed-list>
+    </div>
+  </div>
+</div>

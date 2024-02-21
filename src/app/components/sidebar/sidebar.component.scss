@@ -1,0 +1,78 @@
+$font-color:#000;
+$background-color: #00bcd4;
+.sidebar-wrapper{
+    .nav{
+        margin-top: 20px;
+        display: block;
+        .nav-item{
+            .nav-link{
+              margin: 10px 15px 0;
+              border-radius: 3px;
+              color: #3c4858;
+              text-transform: capitalize;
+              font-size: 13px;
+              padding: 10px 15px;
+              span{
+                margin: 0;
+                line-height: 30px;
+                font-size: 14px;
+                position: relative;
+                display: block;
+                height: auto;
+                white-space: nowrap;
+              }
+            }
+            i{
+              font-size: 24px;
+              float: left;
+              margin-right: 15px;
+              line-height: 30px;
+              width: 30px;
+              text-align: center;
+              color: #a9afbb;
+            }
+
+            &.active a{
+              background-color: $background-color ;
+              color: #fff;
+              margin: 0 15px;
+              padding: 10px 15px;
+              box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0,188,212,.4);
+              color: #fff;
+                    i{
+                        color: #fff
+                    }
+            }
+            &:hover{
+              background-color: rgba(200,200,200,.2);
+              color: #3c4858;
+              box-shadow: none;
+            }
+        }
+    }
+}
+.logo{
+  padding: 15px 0;
+  margin: 0;
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    height: 1px;
+    width: calc(100% - 30px);
+    background-color: rgba(180,180,180,.3);
+  }
+}
+
+
+.navlogout:hover{
+  background-color: #00bcd4;
+  color: #fff;
+  box-shadow: none;
+}

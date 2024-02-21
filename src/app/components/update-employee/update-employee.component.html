@@ -1,0 +1,132 @@
+<div class="main-content">
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-md-12 main">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title">Resources form</h4>
+                        <p class="card-category">Complete the below form</p>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="updateForm" (ngSubmit)="updateForm">
+                            <div class="row">
+                                <!-- <div class="col-md-6">
+                                <div class="forminput">
+
+                                    <mat-form-field class="example-full-width" appearance="outline">
+    
+                                        <mat-label>Emp Id</mat-label> <input formControlName="empId"  matInput required>
+    
+                                        <mat-error>ID is Required!</mat-error>
+                                    </mat-form-field>
+                               
+    
+                                    <mat-form-field class="half-width" appearance="outline">
+    
+                                        <mat-label>Emp Name</mat-label> <input formControlName="empName" matInput required>
+    
+                                        
+    
+                                    </mat-form-field>
+                                    <mat-form-field class="half-width" appearance="outline">
+    
+                                        <mat-label>Project Id</mat-label> <input formControlName="projectId" matInput required>
+    
+                                      
+    
+                                    </mat-form-field>
+                                    <mat-form-field class="half-width" appearance="outline">
+    
+                                        <mat-label>Project Name</mat-label> <input formControlName="projectName" matInput required>
+                                        
+                                   
+    
+                                    </mat-form-field>
+                                    <div>
+
+                                        <mat-form-field class="full-width" appearance="outline">
+        
+                                            <mat-label>Email ID</mat-label> <input formControlName="emailId" matInput required>
+        
+                                            
+        
+                                        </mat-form-field>
+        
+                                    </div>
+                                    <mat-form-field class="half-width" appearance="outline">
+    
+                                        <mat-label>ABL Service line</mat-label> <input formControlName="abl" matInput required>
+    
+    
+                                    </mat-form-field>
+                                    <mat-form-field class="half-width" appearance="outline">
+    
+                                        <mat-label>GE Business/ Account Name</mat-label> <input formControlName="accountName" matInput required>
+    
+                                                  
+    
+                                    </mat-form-field>
+                                    <mat-form-field class="half-width" appearance="outline">
+    
+                                        <mat-label>Emp Type (Subcone/Employee)</mat-label> <input formControlName="empType" matInput required>
+                                    </mat-form-field> -->
+                                    <div class="col-md-6">
+                                        <mat-form-field class="half-width" >
+                                            <input matInput placeholder="Emp Id" formControlName="empId">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field class="half-width" >
+                                            <input matInput placeholder="Emp Name" formControlName="empName">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field class="half-width">
+                                            <input matInput placeholder="Project Id" formControlName="projectId">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field class="half-width">
+                                            <input matInput placeholder="Project Name" formControlName="projectName">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field class="half-width">
+                                            <input matInput placeholder="EM - Email id" formControlName="emailId">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field class="half-width">
+                                            <input matInput placeholder="GE Business/ Account Name" formControlName="accountName">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field class="half-width">
+                                            <input matInput placeholder="ABL Service line" formControlName="abl">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field class="half-width">
+                                            <input matInput placeholder="Emp Type (Subcone/Employee)" formControlName="empType">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-9">
+                                    <button type="button" class="btn btn-primary"  (click)="onUpdateForm(updateForm)" >Update</button> 
+                                </div>
+                            </div>
+
+                     
+
+                        
+                    
+                
+            
+       
+   
